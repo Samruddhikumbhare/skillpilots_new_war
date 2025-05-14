@@ -1,0 +1,70 @@
+<style>
+
+@charset "UTF-8";
+
+* { box-sizing: border-box; }
+
+body {
+	font: 16px sans-serif;
+	color: #454545;
+    /*background: rgb(218,244,249);*/
+    background: #fff;
+	margin: 0;
+	padding: 3rem 2rem 2rem 2rem;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 1.4rem;
+	color: #555;
+}
+
+.pdfobject-com {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2016;
+}
+
+.pdfobject-com a:link, .pdfobject-com a:visited {
+	color: #fff;
+	font-weight: bold;
+	display: block;
+	padding: .25rem 1rem;
+	background: #6699FF;
+	text-decoration: none;
+}
+
+.pdfobject-com a:hover, .pdfobject-com a:visited:hover {
+	color: #FFF;
+	background: #FF3366;
+	text-decoration: none;
+}
+
+.pdfobject-com a:before {
+     content: "\2190";
+     margin-right: .25rem;
+} 
+/*
+PDFObject appends the classname "pdfobject-container" to the target element.
+This enables you to style the element differently depending on whether the embed was successful.
+In this example, a successful embed will result in a large box.
+A failed embed will not have dimensions specified, so you don't see an oddly large empty box.
+*/
+
+.pdfobject-container {
+	width: 100%;
+	max-width: 700px;
+	height: 490px;
+	margin: 1em 0;
+}
+
+.pdfobject { border: solid 1px #666; }
+#results { padding: 1rem; }
+.hidden { display: none; }
+.success { color: #4F8A10; background-color: #DFF2BF; }
+.fail { color: #D8000C; background-color: #FFBABA; }
+
+
+
+

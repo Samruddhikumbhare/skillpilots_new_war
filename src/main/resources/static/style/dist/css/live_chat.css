@@ -1,0 +1,273 @@
+.parameter {
+	padding: 5px;
+}
+
+select {
+	padding: 5px !important;
+	max-width: 60%;
+}
+
+input, select {
+	border-width: 0px !important;
+	border-bottom-width: 2px !important;
+	border-color: #1974c3;
+}
+
+label {
+	min-width: 25%;
+	max-width: 40%;
+	color: #1974c3;
+}
+
+.checkbox, .radio {
+	margin: 0px;
+}
+
+.radio label, label.radio-inline {
+	padding-left: 30px;
+}
+
+.boxx {
+	padding: 20px;
+	display: none;
+	margin-top: 18px;
+}
+
+/* // Chat css */
+body {
+	background: #eee;
+}
+
+.chat-list {
+	padding: 0;
+	/*  font-size: .8rem; */
+}
+
+.chat-list li {
+	margin-bottom: 10px;
+	overflow: auto;
+	color: #ffffff;
+}
+
+.chat-list .chat-img {
+	float: left;
+	width: 48px;
+}
+
+.chat-list .chat-img img {
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	width: 100%;
+}
+
+.chat-list .chat-message {
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 9px;
+	background: #5a99ee;
+	display: inline-block;
+	padding: 5px 10px;
+	position: relative;
+}
+
+.chat-list .chat-message:before {
+	content: "";
+	position: absolute;
+	top: 15px;
+	width: 0;
+	height: 0;
+}
+
+.chat-list .chat-message h5 {
+	margin: 0 0 5px 0;
+	font-weight: 600;
+	line-height: 100%;
+	font-size: .9rem;
+}
+
+.chat-list .chat-message p {
+	line-height: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+.chat-list .chat-body {
+	margin-left: 20px;
+	float: left;
+	width: 70%;
+}
+
+.chat-list .in .chat-message:before {
+	left: -12px;
+	border-bottom: 20px solid transparent;
+	border-right: 20px solid #5a99ee;
+}
+
+.chat-list .out .chat-img {
+	float: right;
+}
+
+.chat-list .out .chat-body {
+	float: right;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.chat-list .out .chat-message {
+	background: #fc6d4c;
+}
+
+.chat-list .out .chat-message:before {
+	right: -12px;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid #fc6d4c;
+}
+
+.card .card-header:first-child {
+	-webkit-border-radius: 0.3rem 0.3rem 0 0;
+	-moz-border-radius: 0.3rem 0.3rem 0 0;
+	border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.card .card-header {
+	/*background: #0073b7;*/
+	border: 0;
+	font-size: 1rem;
+	padding: .65rem 1rem;
+	position: relative;
+	font-weight: 600;
+	color: #ffffff;
+}
+
+/* .content {
+	margin-top: 40px;
+} */
+
+.btn:hover {
+	/* background-color: RoyalBlue; */
+}
+
+.send_btn {
+	background-color: #3610b9 !important;
+	border: 0 !important;
+	color: white !important;
+	cursor: pointer;
+	padding: 5px 15px;
+}
+
+
+.senderMsg {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	overflow-wrap: break-word;
+}
+
+.senderMsg p {
+	border-radius: 3px;
+	font-size: 14px;
+	margin: 0 10px 3px 0;
+	color: #fff;
+	padding: 5px 10px 5px 12px;
+	background: #05728f;
+	max-width: 50%
+}
+
+.reciveMsg {
+	display: flex;
+	justify-content: flex-start;
+	width: 100%;
+	overflow-wrap: break-word;
+}
+
+.reciveMsg p {
+	background: #ebebeb none repeat scroll 0 0;
+	border-radius: 3px;
+	color: #646464;
+	font-size: 14px;
+	margin: 3px 0 3px 10px;
+	padding: 5px 10px 5px 12px;
+	max-width: 50%
+}
+
+.justify-content-end {
+	justify-content: flex-end;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.user_info {
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 15px;
+}
+
+.user_info span {
+	font-size: 20px;
+	color: #192B38;
+}
+
+.user_info p {
+	font-size: 10px;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.msg_head {
+	padding: 3px;
+}
+
+.input-group-append {
+	position: absolute;
+	right: 0%;
+	top: 45%;
+	margin-right: 14px;
+	margin-top: 13px;
+}
+
+.chat {
+	border: 1px solid black;
+	margin-bottom: 15px;
+	background-color: #fff;
+	padding: 0px;
+}
+
+.time_datesend {
+	color: #ad9c9c;
+	display: block;
+	font-size: 10px;
+	margin: 1px 10px 0px 0;
+	float: right;
+	font-weight: 600;
+}
+
+.username {
+	color: #747474;
+	display: block;
+	font-size: 12px;
+	margin: 5px 11px 2px 0;
+	float: right;
+}
+
+.time_date {
+	color: #ad9c9c;
+	display: block;
+	font-size: 10px;
+	margin: 1px 0 2px 10px;
+	font-weight: 600;
+}
+
+.username1 {
+	color: #747474;
+	display: block;
+	font-size: 12px;
+	margin: 1px 0 2px 10px;
+}
+
+.cobine {
+	justify-content: flex-end;
+	width: 100%;
+	margin-bottom: 14px;
+}

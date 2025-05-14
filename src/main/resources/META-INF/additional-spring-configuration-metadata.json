@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "sms.authkey",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.authkey'"
+  },
+  {
+    "name": "sms.senderId",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.senderId'"
+  },
+  {
+    "name": "sms.senderId",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.senderId'"
+  },
+  {
+    "name": "sms.route",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.route'"
+  },
+  {
+    "name": "sms.templateId",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.templateId'"
+  },
+  {
+    "name": "sms.campaign",
+    "type": "java.lang.String",
+    "description": "A description for 'sms.campaign'"
+  },
+  {
+    "name": "app.firebase-configuration-file",
+    "type": "java.lang.String",
+    "description": "A description for 'app.firebase-configuration-file'"
+  },
+  {
+    "name": "3306/testskill",
+    "type": "java.lang.String",
+    "description": "A description for '3306/testskill'"
+  }
+]}

@@ -1,0 +1,49 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover, .tab-content {
+	background-color: #f7f7f7 !important;
+	color: black !important;
+}
+.nav-tabs>li.active>a {
+	border-top-left-radius: 4px;
+    border-top-right-radius: 10px;
+}
+
+.param-txt {
+	width: 100%;
+	vertical-align: middle;
+}
+.greenHov{
+color: #08c308;
+}
+.greenHov:hover{
+color:#05f518 !important;
+}
+.redHov{
+color: #d81414f2;
+}
+.redHov:hover{
+color: red !important;
+}
+.actIcon{
+font-size: 20px;
+}
+
+.checkbox, .radio {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.btn-info {
+    background-color: #00c0ef !important;
+    border-color: #00acd6 !important;
+}
+.info-label{
+color: #11ad4a;
+    font-weight: bold;
+    font-family: monospace;
+    padding: 5px;
+    float: left;
+    margin-left: 10px;
+}
+.tab-pane{
+	padding: 20px !important;
+}

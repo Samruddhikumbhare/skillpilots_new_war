@@ -1,0 +1,30 @@
+.scroll-for-schedule {
+	overflow-y: scroll;
+	height: 445px;
+}
+
+.tab_td {
+	padding: 3px !important;
+}
+
+.td_hover:hover {
+	color: black;
+	background: #cccccc;
+	font-weight: bold;
+}
+
+#weekly_schd {
+	display: block;
+	height: 300px;
+	overflow: auto;
+}
+
+#weekly_thead, #weekly_schd tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+#weekly_thead {
+	width: calc(100% - 1em)
+}
