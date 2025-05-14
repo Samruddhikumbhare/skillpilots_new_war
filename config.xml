@@ -1,0 +1,117 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1520.v56d65e3b_4566">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2255.v56a_15e805f12"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2255.v56a_15e805f12">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github@1.43.0">
+      <projectUrl>https://github.com/Samruddhikumbhare/skillpilots_new_war.git/</projectUrl>
+      <displayName></displayName>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers>
+        <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.43.0">
+          <spec></spec>
+        </com.cloudbees.jenkins.GitHubPushTrigger>
+      </triggers>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4106.v7a_8a_8176d450">
+    <script>pipeline {
+    agent any
+
+    environment {
+        DOCKER_REGISTRY = &apos;docker.io&apos;
+        DOCKER_IMAGE_NAME = &apos;samruddhinikhare/skillpilots-backend&apos;
+        DOCKER_TAG = &quot;${env.BUILD_NUMBER}&quot;
+
+        ARTIFACT_NAME = &apos;skillpilots.war&apos;
+        ARTIFACT_PATH = &quot;target/${ARTIFACT_NAME}&quot;
+        CONTAINER_NAME = &apos;springboot-war-app&apos;
+        PORT_MAPPING = &apos;8001:8001&apos;
+    }
+
+    stages {
+        stage(&apos;Checkout&apos;) {
+            steps {
+                git(
+                    branch: &apos;shanku&apos;,
+                    url: &apos;https://github.com/Samruddhikumbhare/skillpilots_new_war.git&apos;
+                )
+            }
+        }
+
+        stage(&apos;Build&apos;) {
+            steps {
+                sh &apos;&apos;&apos;
+                   chmod +x mvnw
+                   ./mvnw clean package
+               &apos;&apos;&apos;
+            }
+        }
+
+        stage(&apos;Verify Artifact&apos;) {
+            steps {
+                sh &apos;&apos;&apos;
+                    echo &quot;Generated WAR file:&quot;
+                    ls -la ${ARTIFACT_PATH}
+                &apos;&apos;&apos;
+            }
+        }
+
+        stage(&apos;Build Docker Image&apos;) {
+            steps {
+                script {
+                    sh &apos;ls -la Dockerfile&apos;
+
+                    sh &quot;&quot;&quot;
+                        DOCKER_BUILDKIT=0 docker build \
+                        -t ${DOCKER_IMAGE_NAME}:${DOCKER_TAG} \
+                        --build-arg WAR_FILE=${ARTIFACT_PATH} \
+                        -f Dockerfile .
+                    &quot;&quot;&quot;
+                }
+            }
+        }
+
+        stage(&apos;Deploy&apos;) {
+            steps {
+                script {
+                    sh &quot;&quot;&quot;
+                        docker stop ${CONTAINER_NAME} || true
+                        docker rm ${CONTAINER_NAME} || true
+                    &quot;&quot;&quot;
+
+                    sh &quot;&quot;&quot;
+                        docker run -d \
+                            --name ${CONTAINER_NAME} \
+                            -p ${PORT_MAPPING} \
+                            --restart unless-stopped \
+                            ${DOCKER_IMAGE_NAME}:${DOCKER_TAG}
+                    &quot;&quot;&quot;
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+            sh &apos;docker system prune -f&apos;
+        }
+    }
+}
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
