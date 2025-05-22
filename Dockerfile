@@ -1,9 +1,9 @@
-#FROM tomcat:10.1.40-jdk17
+FROM tomcat:10.1.40-jdk17
 
-#ARG WAR_FILE
+ARG WAR_FILE
 
-#COPY ${WAR_FILE} /usr/local/tomcat/webapps/ROOT.war
+COPY ${WAR_FILE} /usr/local/tomcat/webapps/ROOT.war
 
-#EXPOSE 8001
+EXPOSE 8001
 
-#CMD ["catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
